@@ -16,28 +16,37 @@ tar -xvf rdrp_contigs.tar.gz
 ## Protein Translation
 Contigs were translated into genes using Prodigal V2.6.3 and Nextflow version 23.04.0.5857
  
-```nextflow run genecaller.nf --with-tower
-
+```
+nextflow run genecaller.nf --with-tower
 ```
 
-##  A HMM database was created from David's alignment with hhmbuild version 3.2.1
+##  A HMM database was created 
+
+This used David's alignment with hhmbuild version 3.2.1
 
 ```
 hmmbuild wiv.hmm wiv_aln.fasta
 ```
 
-## HMM search was run with hmmsearch version 3.2.1 
+## HMM search
 
-```hmmsearch -A wivdomhits.sto --tblout wivdomtbl.txt -E 1e-3 --cpu 24 wiv.hmm rdrp_genes.faa
+this ws  run with hmmsearch version 3.2.1 
+
+```
+hmmsearch -A wivdomhits.sto --tblout wivdomtbl.txt -E 1e-3 --cpu 24 wiv.hmm rdrp_genes.faa
 ```
 
-## Reformat the Stockholm alignment to an unaligned fasta using Hmmer easel tools version 3.3.2
+## Extracting the alignments
+
+Reformat the Stockholm alignment to an unaligned fasta using Hmmer easel tools version 3.3.2
 
 ```
 esl-reformat wivdomhits.sto > wivdomhits.fa
 ```
 
-## The Hmmer hit data was merged with metadata from Serratus in R
+## Attching metadata
+
+The Hmmer hit data was merged with metadata from Serratus in R
 
 ```{r}
 # R version 4.2.0 
@@ -59,7 +68,7 @@ gzip -9 wiv.contigs.fasta
 
 ## Excluded files
 
-Several files in this analysis are large and were excluded  from the repo. the were
+Several files in this analysis are large and were excluded  from the repo. they were:
 
 
 *	.nextflow.log
