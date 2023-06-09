@@ -1,0 +1,22 @@
+#                                                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                                          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#                                  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+SRR12017910.micro.NODE_31_length_888_cov_3.722699_1    -          cipro_wiv_aln        -                  1   16.2   0.1       3.4   14.6   0.1   1.9   1   0   0   1   1   1   0 # 2 # 886 # 1 # ID=20255_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.417
+SRR8820831.macro.NODE_849_length_2814_cov_5.904831_2   -          cipro_wiv_aln        -                1.4   15.7   1.6       1.7   15.5   1.6   1.1   1   0   0   1   1   1   0 # 862 # 1137 # 1 # ID=26313_2;partial=00;start_type=ATG;rbs_motif=TAA;rbs_spacer=12bp;gc_cont=0.257
+SRR3179984.micro.NODE_4_length_441_cov_2.092391_1      -          cipro_wiv_aln        -                1.9   15.3   0.0       3.2   14.6   0.0   1.4   1   0   0   1   1   1   0 # 1 # 441 # -1 # ID=18710_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.449
+SRR7227120.micro.NODE_2_length_830_cov_4.207398_1      -          cipro_wiv_aln        -                2.1   15.2   0.0       6.1   13.7   0.0   1.8   1   0   0   1   1   1   0 # 1 # 828 # -1 # ID=33053_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.380
+SRR7227115.micro.NODE_9_length_830_cov_5.092470_1      -          cipro_wiv_aln        -                2.1   15.2   0.0       6.1   13.7   0.0   1.8   1   0   0   1   1   1   0 # 3 # 830 # -1 # ID=27369_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.379
+SRR5185870.macro.NODE_2027_length_6041_cov_43.285020_1 -          cipro_wiv_aln        -                3.3   14.6   0.0         7   13.5   0.0   1.5   1   0   0   1   1   1   0 # 2 # 2329 # -1 # ID=19690_1;partial=10;start_type=GTG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.446
+SRR5185736.macro.NODE_4480_length_6801_cov_58.144620_1 -          cipro_wiv_aln        -                3.3   14.6   0.0       7.2   13.5   0.0   1.5   1   0   0   1   1   1   0 # 140 # 2491 # -1 # ID=20002_1;partial=00;start_type=GTG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.446
+SRR5134732.micro.NODE_1_length_1745_cov_100.819976_1   -          cipro_wiv_aln        -                  7   13.5   0.2        35   11.3   0.1   2.1   2   0   0   2   2   2   0 # 3 # 1745 # -1 # ID=22275_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.358
+DRR223255.micro.NODE_3_length_1167_cov_13.789803_1     -          cipro_wiv_aln        -                9.1   13.2   0.2        59   10.6   0.1   2.2   2   0   0   2   2   2   0 # 3 # 1121 # -1 # ID=24081_1;partial=10;start_type=ATG;rbs_motif=AGxAGG/AGGxGG;rbs_spacer=3-4bp;gc_cont=0.422
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      cypo_wiv.hmm
+# Target file:     rdrp_genes.faa
+# Option settings: /usr/bin/hmmsearch -A cypo_wivdomhits.sto --tblout cypo_wivdomtbl.txt --cpu 24 cypo_wiv.hmm rdrp_genes.faa 
+# Current dir:     /90daydata/gbru_fy22_amr_cooccurence/wiv
+# Date:            Fri Jun  9 06:50:11 2023
+# [ok]

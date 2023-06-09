@@ -30,7 +30,7 @@ hmmbuild wiv.hmm wiv_aln.fasta
 
 ## HMM search
 
-this ws  run with hmmsearch version 3.2.1 
+this was run with hmmsearch version 3.2.1 
 
 ```
 hmmsearch -A wivdomhits.sto --tblout wivdomtbl.txt -E 1e-3 --cpu 24 wiv.hmm rdrp_genes.faa
@@ -41,7 +41,7 @@ hmmsearch -A wivdomhits.sto --tblout wivdomtbl.txt -E 1e-3 --cpu 24 wiv.hmm rdrp
 Reformat the Stockholm alignment to an unaligned fasta using Hmmer easel tools version 3.3.2
 
 ```
-esl-reformat wivdomhits.sto > wivdomhits.fa
+esl-reformat fasta wivdomhits.sto > wivdomhits.fa
 ```
 
 ## Attching metadata
@@ -89,3 +89,55 @@ Several files in this analysis are large and were excluded  from the repo. they 
 *	rdrp_genes.faa
 *	wiv_contig_metadata.csv
 *	work/
+
+
+# Additional analysis
+
+6/9/2023
+
+## Ciproviridae WIV search
+
+Build hmm from Alignment of cypoviral WIV domains 
+
+```
+hmmbuild cypo_wiv.hmm cypo_wiv_aln.fasta
+```
+
+
+## HMM search
+
+this ws  run with hmmsearch version 3.2.1
+
+```
+hmmsearch -A cypo_wivdomhits.sto --tblout cypo_wivdomtbl.txt -E 10 --cpu 24 cypo_wiv.hmm rdrp_genes.faa
+```
+No hits were found. 
+
+
+## Rerun original WIV search with lower threshold criteria
+
+## HMM search
+
+this wos run with hmmsearch version 3.2.1 with a less stringent e value
+
+```
+hmmsearch -A low_wivdomhits.sto --tblout low_wivdomtbl.txt -E 10 --cpu 24 wiv.hmm rdrp_genes.faa
+```
+
+## Extracting the alignments
+
+Reformat the Stockholm alignment to an unaligned fasta using Hmmer easel tools version 3.3.2
+
+```
+esl-reformat fasta low_wivdomhits.sto > low_wivdomhits.fa
+```
+
+
+## Align and create a tree
+
+```
+cat wiv_aln.fastalow_wivdomhits.fa
+singularity run  docker://staphb/mafft mafft --auto  --adjustdirection combined.fasta > combined_aln.fasta
+```
+
+
